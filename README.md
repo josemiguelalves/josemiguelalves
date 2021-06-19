@@ -1,5 +1,3 @@
-### Hi there 👋
-
 <!--
 **josemiguelalves/josemiguelalves** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -14,3 +12,9 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+### Hi there 👋
+
+- I'm José, a **software developer** currently working as a **Data & Machine Learning Engineer **  at [Paladin AI](https://paladin.ai/) 🛫.
+- I am originally from Brazil 🇧🇷 , and  I've been living in Canada 🇨🇦 since 2017. 
+- In my free time, I like to practice outdoor activities like swimming 🏊🏽‍♂️, walking 🚶🏿‍♂️, and standup paddle 🚣. 
