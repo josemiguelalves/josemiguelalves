@@ -12,5 +12,13 @@
     "no-undef": "error",
     "semi": ["warn", "always"],
     "eqeqeq": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["test/**/*.js"],
+      "env": {
+        "mocha": true
+      }
+    }
+  ]
 }
