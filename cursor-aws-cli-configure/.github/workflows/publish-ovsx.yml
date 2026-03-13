@@ -1,0 +1,58 @@
+name: Publish to Open VSX
+
+# Triggers automatically when a version tag is pushed (e.g. v1.0.0)
+# or manually from the Actions tab.
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (package only, do not publish)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  publish:
+    name: Package & Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test
+
+      - name: Package extension (.vsix)
+        run: npm run package
+
+      - name: Upload VSIX as build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-vsix
+          path: '*.vsix'
+          retention-days: 30
+
+      - name: Publish to Open VSX Registry
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: npm run publish:ovsx
+        env:
+          # Create this secret at:
+          # GitHub repo → Settings → Secrets → Actions → OVSX_TOKEN
+          # Get your token from: https://open-vsx.org/user-settings/tokens
+          OVSX_PAT: ${{ secrets.OVSX_TOKEN }}

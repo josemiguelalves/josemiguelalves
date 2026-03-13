@@ -82,8 +82,41 @@ Search for **"AWS CLI Configure for Cursor"** in the Cursor Extensions panel and
 git clone https://github.com/josemiguelalves/cursor-aws-cli-configure.git
 cd cursor-aws-cli-configure
 npm install
-npx vsce package
-# Install the generated .vsix file in Cursor
+npm run package        # produces cursor-aws-cli-configure-x.x.x.vsix
+# Install the generated .vsix in Cursor via "Extensions: Install from VSIX..."
+```
+
+---
+
+## Publishing (maintainers)
+
+### Open VSX Registry
+
+The extension is available on [open-vsx.org](https://open-vsx.org), the open-source extension marketplace used by Cursor, VSCodium, and other VS Code-compatible editors.
+
+#### Automated (recommended)
+
+Push a version tag and the [GitHub Actions workflow](.github/workflows/publish-ovsx.yml) handles everything automatically:
+
+```bash
+# 1. Bump the version in package.json, then:
+git add package.json
+git commit -m "chore: bump version to v1.x.x"
+git tag v1.x.x
+git push origin main --tags
+```
+
+Prerequisites (one-time setup):
+1. Create a namespace at [open-vsx.org](https://open-vsx.org) that matches `"publisher"` in `package.json` (`josemiguelalves`).
+2. Generate a token at **open-vsx.org → User Settings → Access Tokens**.
+3. Add it as a GitHub Actions secret named **`OVSX_TOKEN`** (repo → Settings → Secrets → Actions → New repository secret).
+
+#### Manual
+
+```bash
+npm install
+npm run package                    # builds the .vsix
+OVSX_PAT=<your-token> npm run publish:ovsx
 ```
 
 ---

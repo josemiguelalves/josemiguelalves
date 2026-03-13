@@ -72,14 +72,17 @@
   "scripts": {
     "lint": "eslint .",
     "test": "node ./test/runTest.js",
-    "package": "vsce package",
-    "publish": "vsce publish"
+    "package": "vsce package --no-dependencies",
+    "publish:vsce": "vsce publish --no-dependencies",
+    "publish:ovsx": "ovsx publish --no-dependencies",
+    "publish": "npm run publish:ovsx"
   },
   "devDependencies": {
     "@vscode/test-electron": "^2.3.0",
-    "@vscode/vsce": "^2.19.0",
+    "@vscode/vsce": "^2.24.0",
     "eslint": "^8.45.0",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "ovsx": "^0.9.1"
   },
   "dependencies": {
     "ini": "^4.1.1",
