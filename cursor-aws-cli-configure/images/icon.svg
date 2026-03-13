@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="16" fill="#232F3E"/>
+  <!-- AWS smile arrow -->
+  <path d="M38 78 Q64 96 90 78" stroke="#FF9900" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <polygon points="90,72 96,80 84,82" fill="#FF9900"/>
+  <!-- Terminal prompt -->
+  <text x="22" y="52" font-family="monospace" font-size="28" fill="#FFFFFF" font-weight="bold">AWS</text>
+  <text x="22" y="72" font-family="monospace" font-size="14" fill="#FF9900">CLI</text>
+</svg>
