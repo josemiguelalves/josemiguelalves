@@ -5,7 +5,7 @@ const Mocha = require('mocha');
 const path  = require('path');
 const fs    = require('fs');
 
-const mocha = new Mocha({ timeout: 10000, color: true });
+const mocha = new Mocha({ timeout: 10000, color: true, ui: 'tdd' });
 
 const testDir = path.join(__dirname);
 fs.readdirSync(testDir)
