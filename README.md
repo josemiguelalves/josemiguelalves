@@ -16,5 +16,5 @@ Here are some ideas to get you started:
 ### Hi there 👋
 
 - I'm Jose, a **software developer** currently working as a **Machine Learning Engineer**  at [Varicent](https://www.varicent.com) 🛫.
-- I am originally from Brazil 🇧🇷 , and  I've been living in Canada 🇨🇦 since 2017. 
+- I am originally from Brazil, lived in Canada 🇨🇦 for 9 years, and now I am back to Brazil 🇧🇷 . 
 - In my free time, I like to practice outdoor activities like swimming 🏊🏽‍♂️, walking 🚶🏿‍♂️, and standup paddle 🚣. 
