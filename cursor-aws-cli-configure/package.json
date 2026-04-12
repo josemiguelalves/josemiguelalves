@@ -1,0 +1,91 @@
+{
+  "name": "cursor-aws-cli-configure",
+  "displayName": "AWS CLI Configure for Cursor",
+  "description": "Quickly access the AWS CLI config & credentials files and set any named profile as the [default] profile. Adapted for Cursor IDE.",
+  "version": "1.0.0",
+  "publisher": "josemiguelalves",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "galleryBanner": {
+    "color": "#2B2C33",
+    "theme": "dark"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "aws",
+    "amazon",
+    "aws cli",
+    "config",
+    "credentials",
+    "cursor",
+    "profile"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josemiguelalves/cursor-aws-cli-configure.git"
+  },
+  "bugs": {
+    "url": "https://github.com/josemiguelalves/cursor-aws-cli-configure/issues"
+  },
+  "homepage": "https://github.com/josemiguelalves/cursor-aws-cli-configure#readme",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "aws-cli.open.credentials",
+        "title": "AWS CLI: Open 'credentials' file"
+      },
+      {
+        "command": "aws-cli.open.config",
+        "title": "AWS CLI: Open 'config' file"
+      },
+      {
+        "command": "aws-cli.open.both",
+        "title": "AWS CLI: Open 'credentials' & 'config' files"
+      },
+      {
+        "command": "aws-cli.browse.docs",
+        "title": "AWS CLI: Browse online docs"
+      },
+      {
+        "command": "aws-cli.default.map.credentials",
+        "title": "AWS CLI: Show [named] profile mapped to [default] in 'credentials'"
+      },
+      {
+        "command": "aws-cli.set-default-profile.credentials",
+        "title": "AWS CLI: Set 'credentials' [default] profile to..."
+      },
+      {
+        "command": "aws-cli.copy.profile.credentials",
+        "title": "AWS CLI: Copy profile name from 'credentials'..."
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "node ./test/runTest.js",
+    "package": "vsce package",
+    "publish:vsce": "vsce publish",
+    "publish:ovsx": "ovsx publish",
+    "publish": "npm run publish:ovsx"
+  },
+  "devDependencies": {
+    "@vscode/test-electron": "^2.3.0",
+    "@vscode/vsce": "^2.24.0",
+    "eslint": "^8.45.0",
+    "mocha": "^10.2.0",
+    "ovsx": "^0.9.1"
+  },
+  "dependencies": {
+    "ini": "^4.1.1",
+    "object-hash": "^3.0.0"
+  }
+}

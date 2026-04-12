@@ -1,0 +1,10 @@
+.vscode/**
+.vscode-test/**
+node_modules/**
+test/**
+.github/**
+.gitignore
+.eslintrc.json
+jsconfig.json
+images/icon.svg
+**/*.map
